@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abigail's Biography</title>
+    <link rel="stylesheet" href="aaa.css">
+</head>
+<body>
+    <header>
+        <img src="Abi.JPG" alt="profile picture">
+        <h1><strong> Abi's Biography</strong> </h1>
+        <i>Index number: 4086324</i>
+    </header>
+    <section class="a1">
+        <h1>Here's my biography</h1>
+        <p>Let's explore my identity, interests and aspirations </p>
+    </section>
+    <div class="a2">
+        <button class="button"  onclick="toggleText('info')">Personal info</button>
+        <div id="info" class="hidden-text">
+           <p><strong>Full name:</strong>Abeto Abigail Ayinbono</p>
+           <p><strong>Place of birth:</strong>Bolgatanga Regional Hospital</p>
+           <p><strong>Date of birth:</strong>10th November, 2006.</p>
+           <p><strong>Origin:</strong>Ghanaian</p>
+        </div>
+    <br>
+        <button class="button" onclick="toggleText('about')">All about abi</button>
+        <div id="about" class="hidden-text">
+            <p> I love programming, technology and women empowerment</p>
+        </div>
+    <br>
+        <button class="button" onclick="toggleText('programme')">Career</button>
+        <div id="programme" class="hidden-text">
+            <p>Currently pursuing a bachelor's degree in computer engineering. 
+               Computer engineering is a field that combines knowledge in both
+               computer science and electrical engineering. It focuses on developing, 
+               designing and modeling of IT components such as cpu's and aurduino circuits 
+               as well as knowing the fundamentals of various programming languages such 
+               HTML, Python, JavaScript, etc to design and create websites and softwares.
+            </p>
+            <p>
+               Growing up and being exposed to computers at a very early age, it increased my fascination
+               about the creation and inner workings of these devices. This majorly influenced my decision 
+               on tackling Computer Engineering as my degree. Besides, the world is rapidly advancing in 
+               technology and computer experts are increasing demand. This implies, projecting into the future
+               digitalization is growing rapidly. Again, It's an endeavor I can perfectly cope with since I can
+               conveniently work in my own space, earn a living and can even explore other opportuinities as well.
+            </p>
+        </div>
+    </div>
+    <section class="a3">
+        <h1>My Contact</h1>
+        <p>Reach me... Let's interact</p>
+        <a href="mailto:abetoabigail@gmail.com" class="btn">Email</a>
+        <a href="tel:+233504311807"class="btn">Contact</a>
+    </section>
+<footer>
+    <p>&copy; 2025 Abigail Abeto A. | ,<i>Ref no:</i><b> 21136918 </b>| All rights reserved|</p>
+</footer>
+<script>
+ function toggleText(id){
+    // Hide all texts first
+    document.querySelectorAll('.hidden-text').forEach(el => el.style.display = 'none');
+
+    //Show the clicked one
+    let element = document.getElementById(id);
+    if (element.style.display === 'none' || element.style.display === ''){
+        element.style.display = 'block';
+    }
+ }
+
+ // Hide text when clicking outside
+ document.addEventListener('click', function(event) {
+    let isButton = event.target.classList.contains('button');
+    let isText = event.target.classList.contains('hidden-text');
+
+    if (!isButton && !isText) {
+        document.querySelectorAll('.hidden-text').forEach(el => el.style.display = 'none');
+    }
+ });
+</script>
+</body>
+</html>
